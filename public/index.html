@@ -1,1 +1,75 @@
-.
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saiful Mart — A2Z Online Shopping</title>
+<meta name="description" content="Saiful Mart — Bangla/English A2Z online shop. Cash on Delivery, Dhaka ৳60 / outside Dhaka ৳120, free delivery over ৳2000.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">🛍️ <b>Saiful Mart</b> <span class="tag">A2Z Online Shopping</span></div>
+  <button id="cartBtn" class="cart-btn" type="button">🛒 Cart (<span id="cartCount">0</span>)</button>
+</header>
+
+<div id="demoBanner" class="demo-banner" hidden>⚠️ DEMO MODE — kono real token bosano hoy nai. Sample product dekhano hocche, asol order jabe na. Token bosate README dekhun.</div>
+<div id="notice" class="notice" hidden></div>
+
+<main>
+  <section class="hero">
+    <h1>Ja lagbe, sob ekhane! 🎉</h1>
+    <p>Cash on Delivery • Dhaka ৳60 / Dhaka-r baire ৳120 • ৳2000+ order-e FREE delivery</p>
+    <input id="search" type="search" placeholder="🔍 Product khujun... (jemon: earbuds)" aria-label="Search products">
+  </section>
+
+  <section class="cats" id="cats" aria-label="Categories"></section>
+  <section class="grid" id="grid" aria-live="polite"><p class="loading">Product load hocche...</p></section>
+</main>
+
+<!-- Cart drawer -->
+<aside id="cartDrawer" class="drawer" hidden>
+  <div class="drawer-head"><h2>🛒 Amar Cart</h2><button id="closeCart" type="button">✕</button></div>
+  <div id="cartItems"></div>
+  <div id="cartTotal" class="cart-total"></div>
+  <button id="checkoutBtn" class="btn primary" type="button">Checkout korun →</button>
+</aside>
+
+<!-- Checkout modal -->
+<div id="checkoutModal" class="modal" hidden>
+  <form id="checkoutForm" class="modal-card">
+    <h2>📦 Order korun — Cash on Delivery</h2>
+    <label>Apnar naam *<input name="customer_name" required placeholder="jemon: MD Saiful Islam"></label>
+    <label>Mobile number *<input name="customer_mobile" required inputmode="tel" placeholder="01XXXXXXXXX"></label>
+    <label>District *
+      <select name="district_id" id="districtSelect" required><option value="">District beche nin...</option></select>
+    </label>
+    <label>Thana / Area
+      <select name="thana" id="thanaSelect"><option value="">Age district bechun</option></select>
+    </label>
+    <label>Full address *<textarea name="customer_address" required rows="2" placeholder="Basa/holding, road, area"></textarea></label>
+    <div id="previewBox" class="preview-box"></div>
+    <p class="hint">Payment: Cash on Delivery (COD). Order age preview dekhe confirm korben.</p>
+    <div class="row">
+      <button type="button" id="previewBtn" class="btn">Total dekhun</button>
+      <button type="submit" class="btn primary">✅ Order Confirm korun</button>
+      <button type="button" id="closeCheckout" class="btn ghost">Cancel</button>
+    </div>
+    <p id="checkoutMsg" class="msg"></p>
+  </form>
+</div>
+
+<!-- Order success modal -->
+<div id="successModal" class="modal" hidden>
+  <div class="modal-card">
+    <h2>🎉 Order hoye geche!</h2>
+    <p id="successText"></p>
+    <p class="hint">Order number-ta save kore rakhun. Status jante amader janaben.</p>
+    <button type="button" id="closeSuccess" class="btn primary">Thik ache</button>
+  </div>
+</div>
+
+<footer><p>Saiful Mart • COD available all over Bangladesh</p></footer>
+<script src="app.js"></script>
+</body>
+</html>
