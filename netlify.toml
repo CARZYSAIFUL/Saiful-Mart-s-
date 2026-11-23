@@ -1,0 +1,52 @@
+# Saiful Mart — DropBazarBD dropshipping store (Netlify)
+# Deploy: connect this repo in Netlify, set DROPBAZAR_API_TOKEN in
+# Site settings > Environment variables, then Deploy. No build step needed.
+
+[build]
+  publish = "public"
+  functions = "netlify/functions"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Friendly /api/* aliases for the functions (frontend may use either path).
+[[redirects]]
+  from = "/api/products"
+  to = "/.netlify/functions/products"
+  status = 200
+
+[[redirects]]
+  from = "/api/product"
+  to = "/.netlify/functions/product"
+  status = 200
+
+[[redirects]]
+  from = "/api/districts"
+  to = "/.netlify/functions/districts"
+  status = 200
+
+[[redirects]]
+  from = "/api/order-preview"
+  to = "/.netlify/functions/order-preview"
+  status = 200
+
+[[redirects]]
+  from = "/api/place-order"
+  to = "/.netlify/functions/place-order"
+  status = 200
+
+[[redirects]]
+  from = "/api/order-status"
+  to = "/.netlify/functions/order-status"
+  status = 200
+
+[[redirects]]
+  from = "/api/webhook"
+  to = "/.netlify/functions/webhook"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "no-referrer-when-downgrade"
