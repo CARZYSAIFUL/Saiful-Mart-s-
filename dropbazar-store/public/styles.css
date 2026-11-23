@@ -1,0 +1,41 @@
+/* Saiful Mart — mobile-first, Bangla/English */
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; background: #f6f7f9; color: #1a1a1a; }
+.topbar { position: sticky; top: 0; z-index: 10; display: flex; justify-content: space-between; align-items: center; padding: 12px 14px; background: #111827; color: #fff; }
+.brand { font-size: 18px; } .brand .tag { font-size: 11px; color: #fbbf24; display: block; }
+.cart-btn { background: #f59e0b; border: 0; border-radius: 999px; padding: 8px 14px; font-weight: 700; cursor: pointer; }
+.demo-banner { background: #fef3c7; color: #92400e; padding: 10px 14px; font-size: 14px; text-align: center; }
+.notice { background: #fee2e2; color: #991b1b; padding: 10px 14px; font-size: 14px; text-align: center; }
+main { max-width: 1100px; margin: 0 auto; padding: 12px; }
+.hero h1 { margin: 6px 0 4px; font-size: 24px; }
+.hero p { margin: 0 0 10px; color: #555; }
+#search { width: 100%; padding: 12px; border: 1px solid #d1d5db; border-radius: 10px; font-size: 16px; }
+.cats { display: flex; gap: 8px; overflow-x: auto; padding: 12px 0; }
+.cats button { white-space: nowrap; border: 1px solid #d1d5db; background: #fff; border-radius: 999px; padding: 8px 14px; cursor: pointer; }
+.cats button.active { background: #111827; color: #fff; }
+.grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+@media (min-width: 700px) { .grid { grid-template-columns: repeat(3, 1fr); } .hero h1 { font-size: 30px; } }
+.card { background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,.08); display: flex; flex-direction: column; }
+.card img { width: 100%; aspect-ratio: 1; object-fit: cover; background: #e5e7eb; }
+.card .body { padding: 10px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+.card h3 { margin: 0; font-size: 15px; }
+.price { font-size: 18px; font-weight: 800; color: #047857; }
+.price s { color: #9ca3af; font-size: 13px; font-weight: 400; }
+.demo-tag { font-size: 11px; background: #fef3c7; color: #92400e; border-radius: 4px; padding: 2px 6px; width: fit-content; }
+.btn { background: #111827; color: #fff; border: 0; border-radius: 10px; padding: 10px 14px; cursor: pointer; font-size: 15px; }
+.btn.primary { background: #059669; }
+.btn.ghost { background: #e5e7eb; color: #111827; }
+.btn:disabled { opacity: .5; cursor: wait; }
+.drawer { position: fixed; right: 0; top: 0; bottom: 0; width: min(420px, 100%); background: #fff; z-index: 20; padding: 16px; overflow-y: auto; box-shadow: -4px 0 16px rgba(0,0,0,.2); }
+.drawer-head { display: flex; justify-content: space-between; align-items: center; }
+.cart-total { font-weight: 800; margin: 12px 0; }
+.cart-line { display: flex; justify-content: space-between; gap: 8px; padding: 8px 0; border-bottom: 1px solid #eee; font-size: 14px; }
+.modal { position: fixed; inset: 0; background: rgba(0,0,0,.55); z-index: 30; display: flex; align-items: flex-start; justify-content: center; padding: 20px 10px; overflow-y: auto; }
+.modal-card { background: #fff; border-radius: 14px; padding: 18px; width: min(520px, 100%); }
+.modal-card label { display: block; margin: 10px 0; font-size: 14px; }
+.modal-card input, .modal-card select, .modal-card textarea { width: 100%; padding: 10px; margin-top: 4px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 16px; }
+.row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+.preview-box { background: #ecfdf5; border-radius: 8px; padding: 10px; font-size: 14px; }
+.msg { color: #b91c1c; } .hint { color: #666; font-size: 13px; }
+footer { text-align: center; color: #888; font-size: 13px; padding: 20px; }
+.loading { color: #666; }

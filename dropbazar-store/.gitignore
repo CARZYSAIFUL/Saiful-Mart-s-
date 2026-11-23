@@ -1,0 +1,5 @@
+# NEVER commit secrets. The DropBazar token lives ONLY in Netlify env vars.
+.env
+.env.*
+node_modules/
+.netlify/
